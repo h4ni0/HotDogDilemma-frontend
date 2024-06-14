@@ -1,5 +1,8 @@
+const BACKEND_URL =
+  import.meta.env.VITE_HOTDOG_BACKEND_URL || "http://localhost:3000";
+
 const storeAnswer = async (answer: string): Promise<boolean> => {
-  const response = await fetch("http://localhost:3000/api/answers", {
+  const response = await fetch(`${BACKEND_URL}/api/answers`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
